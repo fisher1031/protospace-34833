@@ -44,6 +44,8 @@ def destroy
   prototype = Prototype.find(params[:id])
   if prototype.destroy
     redirect_to root_path
+  else @prototype.user_id == current_user.id
+    redirect_to action: :index
   end
 end
 
