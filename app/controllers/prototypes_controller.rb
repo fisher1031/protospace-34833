@@ -49,6 +49,14 @@ def destroy
   end
 end
 
+# 任意の文字列の最後の2文字を3回繰り返し、出力するメソッド。
+def extra_end(str)
+  char_num = str.length
+  # slice(3,2)は配列番号（インデックス）3つ目から数えて2つ分の要素
+  right2 = str.slice(char_num - 2, 2)
+  puts right2 * 3
+end
+
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
